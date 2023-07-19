@@ -40,9 +40,12 @@ module.exports = {
         },
         backgroundImage: {
           'hero-pattern':
-            "url('https://i.ibb.co/MkvLDfb/Rectangle-4389.png')",
+            // "url('https://i.ibb.co/MkvLDfb/Rectangle-4389.png')",
+            "url('./data/ecommerce2.png')"
         },
       },
     },
     plugins: [],
   };
+
+  
