@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import {AiOutlineMenu} from 'react-icons/ai';
-import {FiShoppingCart } from 'react-icons/fi';
-import {  BsChatLeft } from 'react-icons/bs';
+// import {FiShoppingCart } from 'react-icons/fi';
+// import {  BsChatLeft } from 'react-icons/bs';
 import {RiNotification3Line} from 'react-icons/ri';
-import { MdKeyboardArrowDown } from 'react-icons/md';
+// import { MdKeyboardArrowDown } from 'react-icons/md';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import avatar from '../data/avatar.jpg';
@@ -24,7 +24,7 @@ const NavButton = ({title,customFunc,icon,color,dotColor})=>(
 
 const Navbar = () => {
 
-  const {  setActiveMenu, isClicked, handleClick, screenSize, setScreenSize, currentColor } = useStateContext();
+  const {  setActiveMenu, isClicked, handleClick, screenSize, setScreenSize, currentColor , setIsNotification , setIsUserProfile} = useStateContext();
 
   useEffect(()=>{
     const handleResize=()=> setScreenSize(window.innerWidth)
@@ -52,21 +52,21 @@ const Navbar = () => {
             <NavButton title="Menu" customFunc={()=>{setActiveMenu((prevActiveMenu)=>!prevActiveMenu)}} color="blue" icon={<AiOutlineMenu/>} />
 
             <div className='flex'>
-            <NavButton
+            {/* <NavButton
              title="Cart" 
              customFunc={()=> handleClick('cart')} 
              color={currentColor} 
              icon={<FiShoppingCart/>} 
-             />
+             /> */}
 
-            <NavButton
+            {/* <NavButton
              title="Chat" 
              dotColor="#03C9D7"
              customFunc={()=> handleClick('chat')} 
              color={currentColor}
              icon={<BsChatLeft/>} 
-             />
-
+             /> */}
+            <div onClick={()=> setIsNotification(true)}>
             <NavButton
              title="Notifications" 
              dotColor="#03C9D7"
@@ -74,17 +74,19 @@ const Navbar = () => {
              color={currentColor}
              icon={<RiNotification3Line/>} 
              />
+            </div>
+            
 
-             <TooltipComponent content="Profile" position='BottomCenter'>
-              <div className='flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg' onClick={()=> handleClick('userProfile')}>
+             {/* <TooltipComponent content="Profile" position='BottomCenter'> */}
+              <div className='flex items-center gap-2 p-1 hover:bg-light-gray rounded-lg' onClick={()=> setIsUserProfile(true)}>
                 <img src={avatar} alt='avatar' className='rounded-full w-8 h-8'/>
                 <p>
                   <span className='text-gray-400 text-14'>Hi, </span>{' '}
                   <span className='text-gray-400 font-bold ml1 text-14'>Joseph</span>
                 </p>
-                <MdKeyboardArrowDown className='text-gray-400 font-bold ml1 text-14' />
+                {/* <MdKeyboardArrowDown className='text-gray-400 font-bold ml1 text-14' onClick={()=> setIsUserProfile(true)} /> */}
               </div>
-             </TooltipComponent>
+             {/* </TooltipComponent> */}
 
             {isClicked.cart && <Cart />}
             {isClicked.chat && <Chat />}
