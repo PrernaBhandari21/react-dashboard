@@ -1,8 +1,8 @@
 import React from 'react'
-import { BsCurrencyRupee } from 'react-icons/bs';
+// import { BsCurrencyRupee } from 'react-icons/bs';
 import { GoDotFill } from 'react-icons/go';
-import {  Pie, Button, SparkLine, Stacked } from '../components';
-import { earningData, SparklineAreaData, ecomPieChartData } from '../data/dummy';
+import { Button, SparkLine, Stacked } from '../components';
+import { earningData, SparklineAreaData } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 
 const Ecommerce = () => {

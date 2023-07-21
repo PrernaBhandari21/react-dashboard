@@ -1,4 +1,4 @@
-import React, {useEfect} from 'react'
+import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import {FiSettings} from "react-icons/fi";
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
@@ -11,7 +11,7 @@ import { useStateContext } from './contexts/ContextProvider';
 
 const App = () => {
 
-  const { setCurrentColor, setCurrentMode, currentMode, activeMenu, currentColor, themeSettings, setThemeSettings } = useStateContext();
+  const { currentMode, activeMenu, currentColor, themeSettings, setThemeSettings } = useStateContext();
 
 
 
