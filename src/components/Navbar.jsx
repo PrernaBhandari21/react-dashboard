@@ -34,7 +34,7 @@ const Navbar = () => {
     handleResize();
 
     return ()=> window.removeEventListener('resize',handleResize)
-  }, [])
+  }, [setScreenSize])
 
   useEffect(()=>{
     if(screenSize <= 900){
@@ -42,7 +42,7 @@ const Navbar = () => {
     }else{
       setActiveMenu(true)
     }
-  },[screenSize])
+  },[screenSize, setActiveMenu])
 
   // useEffect accepts and arrow func and , secondly a dependency, which means when to be called, if nothing that is [] then it will be called only at the start, and when [screenSize] then it will be called every time it changes, which will be heavy for our application!
 
